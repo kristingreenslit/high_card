@@ -12,7 +12,11 @@ new_deck.shuffle
 
 players = []
 
-puts "Enter additional player names, or type 'play' to start the game with one player"
-userInput = gets
-   players.push(userInput)
-puts players
+puts "1 player so far. Enter player names, then type 'play' to start the game"
+userInput = gets.chomp
+  if userInput != 'play'
+    players.push(userInput)
+    puts players
+  else userInput == 'play'
+    puts "let's play!"
+  end
