@@ -11,8 +11,8 @@ new_deck.shuffle
 # puts new_deck
 
 players = []
-puts "Enter number of players"
-userInput = gets.chomp.to_i
-puts userInput
 
-# next step is to get player names and assign cards
+puts "Enter additional player names, or type 'play' to start the game with one player"
+userInput = gets
+   players.push(userInput)
+puts players
