@@ -1,4 +1,3 @@
-# Use these two arrays to generate a deck of cards.
 ranks = [2, 3, 4, 5, 6, 7, 8, 9, 10, "Jack", "Queen", "King", "Ace"]
 suits = [ "hearts", "spades", "clubs", "diamonds" ]
 
@@ -24,13 +23,16 @@ players.push(userInput)
     # ^ push player names into specific index positions since .clear retains [0] with empty value
   end
 
-player1_hand = puts players[0] + ": " + deck_shuffled[0].inspect
-player2_hand = puts players[1] + ": " + deck_shuffled[1].inspect
+card_1 = "#{deck_shuffled[0]}"
+card_2 = "#{deck_shuffled[1]}"
 
-if player1_hand < player2_hand
+puts players[0] + ": " + card_1
+puts players[1] + ": " + card_2
+
+if card_1 < card_2
   puts players[0] + " " + "wins!"
-elsif player1_hand > player2_hand
+elsif card_1 > card_2
   puts players[1] + " " + "wins!"
-else player1_hand == player2_hand
-  puts "It's a tie!"
+else card_1 == card_2
+  puts "It's a tie between" + players[0] + " and" + players[1] + " !"
 end
