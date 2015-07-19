@@ -6,31 +6,29 @@ players = []
 fresh_deck = []
 
 deck = ranks.product(suits)
-# pair together elements in 'ranks' and 'suits' arrays
-
+# ^ pair together elements in 'ranks' and 'suits' arrays
 deck_shuffled = deck.shuffle
-# shuffle pairs
-
+# ^ shuffle pairs
 fresh_deck.push(deck_shuffled)
-# push shuffled cards into 'fresh_deck' array
+# ^ push shuffled cards into 'fresh_deck' array
 
-num_of_players = players.count
-# return number of elements in 'players' array
-
-new_fresh_deck = fresh_deck.drop(num_of_players)
-print new_fresh_deck
-# match length of 'fresh_deck' array with length of 'players' array
-
-# fresh_hand = players.product(fresh_deck)
-# pair elements from 'players' array with elements from 'fresh_deck' array?
-
-
-puts "Enter a player's name, or type 'play' to immediately start the game"
+puts "Enter first player's name, or type 'play' to immediately start the game with two players"
 userInput = gets.chomp
+players.push(userInput)
   if userInput != 'play'
-    players.push(userInput)
-#loop through asking for player names until user enters "play"
+      puts "Enter second player's name"
+        userInput = gets.chomp
+        players.push(userInput)
   else userInput == 'play'
-    players.each { |player| puts 'Player(s) in this game: ' + player }
-    puts "let's play!"
+    userInput.clear
+    # ^ remove 'play', the userInput that was pushed into the array
+    players.push("Player 1" , "Player 2")
   end
+
+puts players
+# def deal_cards(fresh_deck)
+#   puts "let's shuffle!"
+# end
+#
+# puts "Enter another player's name, or type 'play' to immediately start the game"
+#loop through asking for player names until user enters "play"
