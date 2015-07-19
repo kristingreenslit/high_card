@@ -6,13 +6,23 @@ players = []
 fresh_deck = []
 
 deck = ranks.product(suits)
-# pairs elements in 'ranks' and 'suits' arrays
-deck_shuffled = deck.shuffle
-# shuffles pairs
-fresh_deck.push(deck_shuffled)
-# pushes shuffled cards into a new array
+# pair together elements in 'ranks' and 'suits' arrays
 
-# need function to deal an element from fresh_deck to each player
+deck_shuffled = deck.shuffle
+# shuffle pairs
+
+fresh_deck.push(deck_shuffled)
+# push shuffled cards into 'fresh_deck' array
+
+num_of_players = players.count
+# return number of elements in 'players' array
+
+new_fresh_deck = fresh_deck.drop(num_of_players)
+print new_fresh_deck
+# match length of 'fresh_deck' array with length of 'players' array
+
+# fresh_hand = players.product(fresh_deck)
+# pair elements from 'players' array with elements from 'fresh_deck' array?
 
 
 puts "Enter a player's name, or type 'play' to immediately start the game"
